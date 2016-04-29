@@ -150,8 +150,10 @@ public class MainActivity extends AppCompatActivity
             MainBrowser.loadUrl("http://new.farmbizafrica.com/profit-boosters");
 
         }else if (id == R.id.nav_cat_markets) {
-            MainBrowser.loadUrl("http://new.farmbizafrica.com/markets");
+//            MainBrowser.loadUrl("http://new.farmbizafrica.com/markets");
+            Intent viewContentIntent= new Intent(this,ContentViewActivity.class);
 
+            startActivity(viewContentIntent);
         }
 
         else if (id == R.id.nav_share) {
