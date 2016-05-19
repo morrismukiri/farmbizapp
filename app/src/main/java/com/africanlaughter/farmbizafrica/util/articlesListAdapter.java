@@ -60,17 +60,26 @@ public class ArticlesListAdapter extends ArrayAdapter<String> {
 
 //        ImageView articleImage = (ImageView) articlesListViewItem.findViewById(R.id.article_image);
         NetworkImageView articleThumbNail = (NetworkImageView) articlesListViewItem.findViewById(R.id.article_image);
+        TextView articleID = (TextView) articlesListViewItem.findViewById(R.id.article_id);
         TextView articleTitle = (TextView) articlesListViewItem.findViewById(R.id.article_title);
         TextView articleDetail = (TextView) articlesListViewItem.findViewById(R.id.article_detail);
         TextView articleIntro = (TextView) articlesListViewItem.findViewById(R.id.article_intro);
+        TextView articleFullText = (TextView) articlesListViewItem.findViewById(R.id.article_full_content);
+        TextView articleImageURL = (TextView) articlesListViewItem.findViewById(R.id.article_image_url);
+        TextView articleURL= (TextView) articlesListViewItem.findViewById(R.id.article_url);
 
         Article atcl= articles.get(position);
 
 
+        articleID.setText(atcl.getId());
         articleTitle.setText(atcl.getTitle());
         articleDetail.setText("Published on " + atcl.getDetails());
         articleIntro.setText(Html.fromHtml(atcl.getIntro()));
         articleThumbNail.setImageUrl(atcl.getImageURL(),imageLoader);
+        articleFullText.setText(atcl.getArticleFullContent());
+        articleImageURL.setText(atcl.getArticleURL());
+        articleURL.setText(atcl.getArticleURL());
+
 
 //        Log.d(atcl.getImageURL());
 

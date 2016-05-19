@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -25,6 +23,7 @@ import java.io.File;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    public static String CurrentAPIURL;
     private WebView MainBrowser;
     private ProgressBar progress;
     @Override
@@ -134,9 +133,17 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_latest) {
-            MainBrowser.loadUrl("http://new.farmbizafrica.com/index.php?option=com_content&view=featured");
+            CurrentAPIURL="articles/latest/5";
+            Intent viewContentIntent= new Intent(this,ContentListActivity.class);
+
+            startActivity(viewContentIntent);
+//            MainBrowser.loadUrl("http://new.farmbizafrica.com/index.php?option=com_content&view=featured");
         } else if (id == R.id.nav_featured) {
-            MainBrowser.loadUrl("http://new.farmbizafrica.com/index.php?option=com_content&view=featured");
+            CurrentAPIURL="articles/featured";
+            Intent viewContentIntent= new Intent(this,ContentListActivity.class);
+
+            startActivity(viewContentIntent);
+//            MainBrowser.loadUrl("http://new.farmbizafrica.com/index.php?option=com_content&view=featured");
         } else if (id == R.id.nav_editors_pick) {
             MainBrowser.loadUrl("http://new.farmbizafrica.com/index.php?option=com_content&view=featured");
         } else if (id == R.id.nav_cat_high_yield) {
@@ -151,7 +158,8 @@ public class MainActivity extends AppCompatActivity
 
         }else if (id == R.id.nav_cat_markets) {
 //            MainBrowser.loadUrl("http://new.farmbizafrica.com/markets");
-            Intent viewContentIntent= new Intent(this,ContentViewActivity.class);
+            CurrentAPIURL="category/8/articles";
+            Intent viewContentIntent= new Intent(this,ContentListActivity.class);
 
             startActivity(viewContentIntent);
         }

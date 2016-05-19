@@ -7,13 +7,12 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name="com.africanlaughter.farmbizafrica.app.AppController"
+        android:name=".app.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -25,13 +24,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ContentViewActivity"
+            android:name=".ContentListActivity"
             android:label="@string/title_activity_content_view"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.africanlaughter.farmbizafrica.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ReadContent"
+            android:label="@string/title_activity_read_content"
+            android:parentActivityName=".ContentListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.africanlaughter.farmbizafrica.ContentListActivity" />
         </activity>
     </application>
 

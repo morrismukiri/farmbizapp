@@ -19,14 +19,25 @@
     <!--android:contentDescription="TODO"-->
     <!--android:src="@mipmap/farmbiz_logo" />-->
 
+    <!--Article Title-->
+    <TextView
+        android:id="@+id/article_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="A Title"
+        android:textSize="24sp" />
     <!-- Thumbnail Image -->
+
     <com.android.volley.toolbox.NetworkImageView
         android:id="@+id/article_image"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginRight="8dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitEnd"
+        android:layout_below="@id/article_title"
+
         android:src="@mipmap/farmbiz_logo" />
+
+
     <!--<TextView-->
     <!--android:id="@+id/article_title"-->
     <!--android:layout_width="fill_parent"-->
@@ -65,21 +76,14 @@
     <!--android:gravity="center_vertical"-->
     <!--android:text="Example application"-->
     <!--android:textSize="12sp" />-->
-    <TextView
-        android:id="@+id/article_title"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/article_image"
-        android:text="A Title"
-        android:textSize="18sp" />
+
 
     <TextView
         android:id="@+id/article_detail"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/article_title"
-        android:layout_toRightOf="@id/article_image"
-        android:singleLine="true"
+        android:layout_below="@id/article_image"
+        android:maxLines="1"
         android:text="description..."
         android:textSize="10sp" />
 
@@ -87,13 +91,34 @@
         android:id="@+id/article_intro"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/article_detail"
-        android:layout_toRightOf="@id/article_image"
         android:ellipsize="end"
         android:gravity="center_vertical"
         android:maxLength="180"
         android:maxLines="4"
         android:text="Description....."
-        android:textSize="12sp" />
+        android:textSize="12sp"
+        android:layout_alignParentTop="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:id="@+id/article_url"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:id="@+id/article_full_content"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:id="@+id/article_id"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:id="@+id/article_image_url"/>
+
+
 
 </RelativeLayout>
