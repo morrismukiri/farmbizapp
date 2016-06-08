@@ -10,11 +10,11 @@
             android:id="@+id/nav_featured"
             android:icon="@android:drawable/btn_star_big_on"
             android:title="Featured" />
-        <item
-            android:id="@+id/nav_editors_pick"
-            android:icon="@drawable/ic_flag_black_24dp"
-            android:tint="@color/colorAccent"
-            android:title="Editor's Picks" />
+        <!--<item-->
+            <!--android:id="@+id/nav_editors_pick"-->
+            <!--android:icon="@drawable/ic_flag_black_24dp"-->
+            <!--android:tint="@color/colorAccent"-->
+            <!--android:title="Editor's Picks" />-->
         <!--<item-->
             <!--android:id="@+id/nav_manage"-->
             <!--android:icon="@drawable/ic_menu_manage"-->
@@ -41,6 +41,10 @@
             android:id="@+id/nav_cat_markets"
             android:icon="@drawable/ic_menu_black_24dp"
             android:title="Markets"/>
+        <item
+            android:id="@+id/nav_cat_trends"
+            android:icon="@drawable/ic_menu_black_24dp"
+            android:title="Market Trends"/>
 
     </group>
 

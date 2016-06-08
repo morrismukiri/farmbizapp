@@ -11,25 +11,25 @@
     android:orientation="vertical"
     android:gravity="bottom">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:src="@android:drawable/sym_def_app_icon"
-        android:id="@+id/profilePicImage"
-        android:contentDescription="profile Picture" />
+    <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:paddingTop="@dimen/nav_header_vertical_spacing"-->
+        <!--android:src="@android:drawable/sym_def_app_icon"-->
+        <!--android:id="@+id/profilePicImage"-->
+        <!--android:contentDescription="profile Picture" />-->
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="Morris Mukiri"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:paddingTop="@dimen/nav_header_vertical_spacing"-->
+        <!--android:text="Morris Mukiri"-->
+        <!--android:textAppearance="@style/TextAppearance.AppCompat.Body1" />-->
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="morrismukiri@gmail.com"
-        android:id="@+id/textView" />
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="morrismukiri@gmail.com"-->
+        <!--android:id="@+id/textView" />-->
 
 </LinearLayout>

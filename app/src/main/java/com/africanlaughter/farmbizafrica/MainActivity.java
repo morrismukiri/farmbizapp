@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity
     public static String CurrentAPIURL;
     private WebView MainBrowser;
     private ProgressBar progress;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-            this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
         MainBrowser = (WebView) findViewById(R.id.browserView);
@@ -53,22 +54,28 @@ public class MainActivity extends AppCompatActivity
         progress = (ProgressBar) findViewById(R.id.progressBar);
         progress.setVisibility(View.GONE);
 
+        CurrentAPIURL = "articles/latest/5";
+        Intent viewContentIntent = new Intent(this, ContentListActivity.class);
 
-        WebSettings webSettings = MainBrowser.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-
-        MainBrowser.loadUrl("http://new.farmbizafrica.com");
+//        startActivity(viewContentIntent);
 
 
-        File profilePicture = new File(this.getFilesDir(), "profilePic.png");
-        ImageView profilePicView=  (ImageView) findViewById(R.id.profilePicImage);
-        if(profilePicture.exists()) {
-            profilePicView.setImageURI(Uri.parse(profilePicture.getAbsolutePath()));
-        }
+//        WebSettings webSettings = MainBrowser.getSettings();
+//        webSettings.setJavaScriptEnabled(true);
+//
+//        MainBrowser.loadUrl("http://new.farmbizafrica.com");
+
+
+//        File profilePicture = new File(this.getFilesDir(), "profilePic.png");
+//        ImageView profilePicView = (ImageView) findViewById(R.id.profilePicImage);
+//        if (profilePicture.exists()) {
+//            profilePicView.setImageURI(Uri.parse(profilePicture.getAbsolutePath()));
+//        }
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
     }
+
     private class MyWebViewClient extends WebViewClient {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -94,6 +101,7 @@ public class MainActivity extends AppCompatActivity
     public void setValue(int progress) {
         this.progress.setProgress(progress);
     }
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -133,41 +141,62 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_latest) {
-            CurrentAPIURL="articles/latest/5";
-            Intent viewContentIntent= new Intent(this,ContentListActivity.class);
+            CurrentAPIURL = "articles/latest/5";
+            Intent viewContentIntent = new Intent(this, ContentListActivity.class);
 
             startActivity(viewContentIntent);
 //            MainBrowser.loadUrl("http://new.farmbizafrica.com/index.php?option=com_content&view=featured");
         } else if (id == R.id.nav_featured) {
-            CurrentAPIURL="articles/featured";
-            Intent viewContentIntent= new Intent(this,ContentListActivity.class);
+            CurrentAPIURL = "articles/featured";
+            Intent viewContentIntent = new Intent(this, ContentListActivity.class);
 
             startActivity(viewContentIntent);
 //            MainBrowser.loadUrl("http://new.farmbizafrica.com/index.php?option=com_content&view=featured");
-        } else if (id == R.id.nav_editors_pick) {
-            MainBrowser.loadUrl("http://new.farmbizafrica.com/index.php?option=com_content&view=featured");
+//        } else if (id == R.id.nav_editors_pick) {
+//
+////            MainBrowser.loadUrl("http://new.farmbizafrica.com/index.php?option=com_content&view=featured");
         } else if (id == R.id.nav_cat_high_yield) {
-            MainBrowser.loadUrl("http://new.farmbizafrica.com/high-yield");
-        }else if (id == R.id.nav_cat_pest_contol) {
-            MainBrowser.loadUrl("http://new.farmbizafrica.com/pest-control");
-        }else if (id == R.id.nav_cat_machinery) {
-            MainBrowser.loadUrl("http://new.farmbizafrica.com/machinery");
-
-        }else if (id == R.id.nav_cat_profit_boosters) {
-            MainBrowser.loadUrl("http://new.farmbizafrica.com/profit-boosters");
-
-        }else if (id == R.id.nav_cat_markets) {
-//            MainBrowser.loadUrl("http://new.farmbizafrica.com/markets");
-            CurrentAPIURL="category/8/articles";
-            Intent viewContentIntent= new Intent(this,ContentListActivity.class);
+            CurrentAPIURL = "category/8/articles";
+            Intent viewContentIntent = new Intent(this, ContentListActivity.class);
 
             startActivity(viewContentIntent);
-        }
+//            MainBrowser.loadUrl("http://new.farmbizafrica.com/high-yield");
+        } else if (id == R.id.nav_cat_pest_contol) {
+            CurrentAPIURL = "category/9/articles";
+            Intent viewContentIntent = new Intent(this, ContentListActivity.class);
 
-        else if (id == R.id.nav_share) {
+            startActivity(viewContentIntent);
+//            MainBrowser.loadUrl("http://new.farmbizafrica.com/pest-control");
+        } else if (id == R.id.nav_cat_machinery) {
+            CurrentAPIURL = "category/10/articles";
+            Intent viewContentIntent = new Intent(this, ContentListActivity.class);
+
+            startActivity(viewContentIntent);
+//            MainBrowser.loadUrl("http://new.farmbizafrica.com/machinery");
+
+        } else if (id == R.id.nav_cat_profit_boosters) {
+            CurrentAPIURL = "category/11/articles";
+            Intent viewContentIntent = new Intent(this, ContentListActivity.class);
+
+            startActivity(viewContentIntent);
+//            MainBrowser.loadUrl("http://new.farmbizafrica.com/profit-boosters");
+
+        } else if (id == R.id.nav_cat_markets) {
+//            MainBrowser.loadUrl("http://new.farmbizafrica.com/markets");
+            CurrentAPIURL = "category/12/articles";
+            Intent viewContentIntent = new Intent(this, ContentListActivity.class);
+
+            startActivity(viewContentIntent);
+        } else if (id == R.id.nav_cat_trends) {
+//            MainBrowser.loadUrl("http://new.farmbizafrica.com/markets");
+            CurrentAPIURL = "category/14/articles";
+            Intent viewContentIntent = new Intent(this, ContentListActivity.class);
+
+            startActivity(viewContentIntent);
+        } else if (id == R.id.nav_share) {
             Intent sendIntent = new Intent();
             sendIntent.setAction(Intent.ACTION_SEND);
-            sendIntent.putExtra(Intent.EXTRA_TEXT, "Testing farmbiz... http://new.farmbizafrica.com");
+            sendIntent.putExtra(Intent.EXTRA_TEXT, "I am using the most informative agricultural blog... http://www.farmbizafrica.com");
             sendIntent.setType("text/plain");
             startActivity(Intent.createChooser(sendIntent, getResources().getText(R.string.send_to)));
 

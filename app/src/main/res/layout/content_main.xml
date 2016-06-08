@@ -32,6 +32,8 @@
         android:layout_below="@id/progressBar"
         android:clickable="true"
         android:id="@+id/browserView"
-        xmlns:android="http://schemas.android.com/apk/res/android" />
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:visibility="gone"/>
+    <include layout="@layout/content_content_list_view" />
 
 </RelativeLayout>
